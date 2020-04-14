@@ -17,6 +17,8 @@
       const overlay = document.querySelector('#overlay');
       const keyboard = document.querySelectorAll('#qwerty button');
       const hearts = document.querySelectorAll('#scoreboard li img');
+      const overlayButton = document.querySelector('#overlay #btn__reset');
+      const overlayImg = document.querySelector('#overlay_img');
       keyboard.forEach(button => {
           button.className = "key"
           button.disabled = false;
@@ -28,18 +30,23 @@
       this.activePhrase = this.getRandomPhrase();
       const displayPhrase = new Phrase(this.activePhrase);
       displayPhrase.addPhraseToDisplay();
+      overlayButton.className = "";
+      overlayImg.src = "";
   }
 
     checkForWin(){
       const currentPhraseAlpha = document.querySelectorAll('#phrase .hide');
       const overlay = document.querySelector('#overlay');
+      const overlayImg = document.querySelector('#overlay_img');
       const overlayHeading = document.querySelector('#overlay .title');
       const overlayButton = document.querySelector('#overlay #btn__reset');
          if(currentPhraseAlpha.length === 0) {
          overlay.className = "win";
          overlay.style.display = "";
          overlayHeading.textContent = "You Win";
+         overlayImg.src = "images/fireworks.gif";
          overlayButton.textContent = "Play Again";
+         overlayButton.className = "button_win";
         }
       }
 
@@ -49,8 +56,9 @@
         const overlayButton = document.querySelector('#overlay #btn__reset');
             overlay.className = "lose";
             overlay.style.display = "";
-            overlayHeading.textContent = "You Lose";
+            overlayHeading.textContent = "Better luck next time";
             overlayButton.textContent = "Try Again";
+            overlayButton.className = "button_lose";
          }
 
   removeLife(){

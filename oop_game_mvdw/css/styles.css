@@ -4,8 +4,8 @@
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
+  --color-win: black;
+  --color-lose: black;
   --color-start: #5b85b7;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
@@ -24,6 +24,7 @@
 }
 
 body {
+  background-color: black;
   justify-content: space-evenly;
   flex-direction: column;
   display: flex;
@@ -84,11 +85,9 @@ button {
 }
 
 /* Title */
-
 .header {
-  color: #3a3f58;
+  color: #D4AF37;
 }
-
 
 /* Phrase */
 
@@ -111,7 +110,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: #D4AF37;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -138,7 +137,7 @@ button {
 }
 
 .wrong {
-  background: #f7a964;
+  background: red;
   color: #FFFFFF;
 }
 
@@ -161,6 +160,20 @@ button {
 
 
 /* Overlay */
+
+#overlay_img {
+  position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.button_win {
+  background-color: #D4AF37;
+}
+
+.button_lose {
+  background-color: #bfc1c2;
+}
 
 #overlay {
   display: flex;
@@ -196,9 +209,10 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: black;
 }
 
 .lose a {
   color: var(--color-lose);
 }
+
