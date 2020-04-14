@@ -13,3 +13,5 @@ If the selected letter is in the phrase at least once, the letter and its positi
 If the selected letter is not in the phrase, one of the player's hearts in the scoreboard is changed from a "live" heart to a "lost" heart.
 
 The player keeps choosing letters until they reveal all the letters in the phrase, or they make five incorrect guesses after which a screen is displayed that they have won or lost.
+
+CSS was customised with a black and gold theme and fireworks was added to the winning message. 
