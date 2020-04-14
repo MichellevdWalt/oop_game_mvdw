@@ -121,6 +121,19 @@ button {
   animation-duration: .5s;
 }
 
+.show_lost {
+  color: #fff;
+  background-color: red;
+  font-size: 20px;
+  height: 65px;
+  width: 65px;
+  padding: 20px 1px 0 1px;
+  margin-right: 2px;
+  border-radius: 5px;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+}
+
 
 /* Keyboard */
 

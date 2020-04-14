@@ -120,7 +120,16 @@
                        this.removeLife();
                     }
                     if (this.missed === 5){
-                        setTimeout(this.gameOver, 500);
+                        const phraseDisplay = document.querySelectorAll('#phrase ul li');
+                        button.forEach(butt => {
+                            butt.disabled = true;
+                        })
+                        phraseDisplay.forEach(letter => {
+                            if (letter.className === "hide letter"){
+                                letter.className = "show_lost";
+                            }
+                        });
+                        setTimeout(this.gameOver, 4000);
                     }
             }   );
         })   
