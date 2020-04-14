@@ -17,7 +17,6 @@
         for (var i = 0; i<phraseLength; i+= 1){
             letterArray.push(this.phrase.charAt(i));
         }
-       // const phraseDiv = document.querySelector('#phrase');
         const phraseUl = document.querySelector('#phrase ul');
         const lettersEx = /[a-z]/;
         letterArray.forEach(letter => {
@@ -52,28 +51,18 @@
 
     }
      checkLetter(){
-         const keyboardDiv = document.querySelector('#qwerty');
-         const button = document.querySelectorAll('#qwerty button');
-         let correctLetter;
-         button.forEach(but => {
-            but.addEventListener("click", (e)=>{
-                    if(newGame.activePhrase.includes(e.target.textContent)){
-                         e.target.className = "chosen";
-                        correctLetter = e.target.textContent
-                         this.showMatchedLetter(e.target.textContent);
-                         newGame.checkForWin();
-                     } else {
-                        e.target.className = "wrong"; 
-                        newGame.missed +=1;
-                        newGame.removeLife();
-                     }
-             });
+        const button = document.querySelectorAll('#qwerty button');
+        button.forEach(but => {
+           but.addEventListener("click", (e)=>{
+                   if(this.activePhrase.includes(e.target.textContent)){
+                        return true;
+                    } else {
+                       return false;
+                    }
+            });
 
-         })
-         
-
-
-    }
-    
- }
-
+        })
+        
+       
+    }  
+}

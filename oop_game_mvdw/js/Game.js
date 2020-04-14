@@ -19,6 +19,7 @@
       const hearts = document.querySelectorAll('#scoreboard li img');
       keyboard.forEach(button => {
           button.className = "key"
+          button.disabled = false;
       });
       hearts.forEach(heart =>{
           heart.src = "images/liveHeart.png";
@@ -65,14 +66,35 @@
      } else if(this.missed === 5){
          hearts[0].src = "images/lostHeart.png";
      }
-
-     if (this.missed === 5){
-         setTimeout(this.gameOver, 1000);
-     }
-
-  }
+    }
     handleInteraction(){
-       
+        const button = document.querySelectorAll('#qwerty button');
+        button.forEach(but => {
+           but.addEventListener("click", (e)=>{
+                   if(this.activePhrase.includes(e.target.textContent)){
+                        e.target.className = "chosen";
+                        but.disabled = true;
+                        newPhrase.showMatchedLetter(e.target.textContent);
+                        this.checkForWin();
+                    } else {
+                       e.target.className = "wrong"; 
+                      but.disabled = true;
+                       newGame.missed +=1;
+                       this.removeLife();
+                    }
+                    if (this.missed === 5){
+                        setTimeout(this.gameOver, 500);
+                    }
+            }   );
+        })   
+        document.addEventListener("keyup", (e)=>{
+            button.forEach(but => {
+                if(but.textContent.includes(e.key)){
+                 but.click();
+                }
+            })
+            
+        });
     }  
 }
 
