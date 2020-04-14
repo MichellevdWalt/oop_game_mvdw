@@ -102,7 +102,8 @@
       *     Calls checkForWin() to check if user has guessed all the letters of the phrase and trigger win.
       * If incorrect letter is chosen the button is disabled and given the class of "wrong".
       *     Calls removeLife() to replace a red heart with a gray one. 
-      * If this.missed tallies to 5 gameOver() is called afer 500ms. 
+      * If this.missed tallies to 5 the keyboard is disabled and the rest of the phrase displayed in red.
+      * this.gameOver() is called afer 4000ms. 
       */   
     handleInteraction(){
         const button = document.querySelectorAll('#qwerty button');
