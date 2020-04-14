@@ -14,4 +14,4 @@ If the selected letter is not in the phrase, one of the player's hearts in the s
 
 The player keeps choosing letters until they reveal all the letters in the phrase, or they make five incorrect guesses after which a screen is displayed that they have won or lost.
 
-CSS was customised with a black and gold theme and fireworks was added to the winning message. If the player loses, the remaining tiles of the phrase is displayed in red.
+CSS was customised with a black and gold theme and fireworks was added to the winning message. If the player loses all 5 hearts, the keyboard is dsiabled and the remaining tiles of the phrase is displayed in red for 4 seconds.
