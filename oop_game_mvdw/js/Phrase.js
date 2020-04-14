@@ -6,6 +6,11 @@
      constructor(phrase){
          this.phrase = phrase.toLowerCase();
      }
+
+     /**
+      * Function to add the active phrase to the phrase list items (Empty blocks) and assign them the
+      *    hide letter or space class accordingly.
+      */
      addPhraseToDisplay() {
          const previousLi = document.querySelectorAll('#phrase ul li');
          const previousUl = document.querySelector('#phrase ul');
@@ -33,12 +38,10 @@
             }
         });
      }
-     handleInteraction(){
-         
-     }
      
-     
-
+     /**
+      * Function to display letter if guessed correctly by changing class name to "show".
+      */
      showMatchedLetter(letter){
          const phraseLi = document.querySelectorAll('#phrase ul li');
          phraseLi.forEach(item => {
@@ -47,9 +50,12 @@
              }
 
          });
-
-
     }
+
+    /**
+     * Function to check if letter was guessed correctly or not. 
+     * returns true or false
+     */
      checkLetter(){
         const button = document.querySelectorAll('#qwerty button');
         button.forEach(but => {
