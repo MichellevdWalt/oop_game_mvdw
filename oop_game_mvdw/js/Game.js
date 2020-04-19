@@ -6,7 +6,7 @@
   constructor(){
       this.missed = 0;
       this.phrases = ["break a leg", "cutting corners", "under the weather", "so far so good", "no pain no gain"];
-      this.activePhrase;
+      this.activePhrase = "";
   }
 
   /**
