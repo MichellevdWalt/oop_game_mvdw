@@ -13,6 +13,7 @@ let newPhrase;
 function startButton(){
     const startBut = document.querySelector('#btn__reset');
     newGame = new Game();
+    newGame.activePhrase = "";
     newPhrase = new Phrase(newGame.activePhrase);
     startBut.addEventListener("click", (e)=> newGame.startGame());
     newGame.handleInteraction();
